@@ -1,0 +1,29 @@
+    /* 用于撑开内容区域的占位元素 */
+    .push {
+        height: 50px;
+        /* 与页脚高度相同 */
+    }
+
+    /* 页面布局 */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper {
+        min-height: 90%;
+        margin-bottom: -50px;
+        /* 与页脚高度相同的负边距 */
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    /* 页脚样式 */
+    .footer {
+        height: 50px;
+        background-color: #f0f0f0;
+        text-align: center;
+        line-height: 50px;
+    }

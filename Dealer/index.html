@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>莊家AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+  <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="../JS/Layout.js"></script>
+  <link rel="stylesheet" type="text/css" href="dist/page.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="box">
+
+    </div>
+    <div class="push"></div>
+  </div>
+  <!-- 規則 -->
+  <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ruleModalLabel">規則</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h5>隨機數量一：</h5>
+            <ul>
+              <li>比大小：抽一張與莊家比大小</li>
+              <li>抽鬼牌：抽一張與莊家一樣則輸</li>
+            </ul>
+          </div>
+          <div>
+            <h5>隨機數量二：</h5>
+            <ul>
+              <li>射龍門：抽一張與莊家兩張牌的點數關係決定輸贏；若第三牌點數介於前兩張牌點數之間算贏，否則算輸。</li>
+            </ul>
+          </div>
+          <div>
+            <h5>隨機數量三：</h5>
+            <ul>
+              <li>地產撲克：每人發3張牌，若手牌上有目標三張牌就算獲勝。每回合玩家抽一張牌，jQK為功能牌，J:抽上加一張牌、Q：抽下家一張牌、K：刷新目標牌</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 設定 -->
+  <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="settingModalLabel">設定</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label class="form-label">隨機數量：</label><label id="RNum" for="RNumBar"></label>
+            <input class="text-center" type="range" class="form-range" min="1" max="5" step="1" id="RNumBar">
+          </div>
+          <div>
+            <label class="form-label">最小值：</label>
+            <input class="text-center" type="number" class="form-range" id="MinNum" value="1">
+          </div>
+          <div>
+            <label class="form-label">最大值：</label>
+            <input class="text-center" type="number" class="form-range" id="MaxNum" value="12">
+          </div>
+          <table>
+            <tr>
+              <td><label for="IsDuplicated">是否重複：</label></td>
+              <td class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="IsDuplicated">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="row d-flex justify-content-between">
+    <button class="btn btn-primary col-3 ms-4" data-bs-toggle="modal" data-bs-target="#ruleModal">規則</button>
+    <button class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#settingModal">設定</button>
+    <button class="btn btn-primary col-3 me-4" id="generateAndFillbtn">開始</button>
+  </footer>
+</body>
+
+<script src="dist/pageLogic.js"></script>
+
+</html>

@@ -1,0 +1,89 @@
+        /* 父容器，使用Flex布局 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* 垂直方向排列子元素 */
+            min-height: 90vh;
+            /* 设置最小高度以确保页脚粘在底部 */
+            /* 增加这行来消除子元素之间的空白 */
+            gap: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        /* 主体内容样式 */
+        .body {
+            display: flex;
+            flex-wrap: wrap;
+            /* 允许子元素换行 */
+            justify-content: space-around;
+            /* 在主轴上均匀分布子元素 */
+            align-items: center;
+            /* 在交叉轴上居中对齐子元素 */
+            flex-grow: 1;
+            /* 让主体内容占据可用的所有剩余空间 */
+        }
+
+        .textbtn {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+        }
+
+        .textbtn h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .row {
+            flex: 1;
+            /* 将每行的高度设置为相等的比例 */
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+            /* 将每列的高度设置为相等的比例 */
+        }
+
+        .roulette {
+            width: 40vh;
+            height: 40vh;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arrow {
+            width: 5px;
+            height: 16vh;
+            background-color: #e74c3c;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            transform-origin: bottom center;
+            transition: transform 3s ease-in-out;
+            z-index: 2;
+            border: 1px solid black
+        }
+
+        /* 分割線 */
+        .divider {
+            position: absolute;
+            width: 1px;
+            height: 20vh;
+            background-color: black;
+            left: 50%;
+            top: 0;
+            transform-origin: bottom;
+            z-index: 1;
+        }
+
+        .txt {
+            color: lightsalmon;
+        }

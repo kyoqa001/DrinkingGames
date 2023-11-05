@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>終極密碼</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+    <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script src="../JS/Layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/page.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="body row text-center">
+            <div id="LeftNodisplay" class="card col">
+                <div id="LeftNo" class="card-body">
+
+                </div>
+            </div>
+            <div id="CenterNodisplay" class="card col" style="display: none;">
+                <div id="CenterNo" class="card-body">
+
+                </div>
+            </div>
+            <div id="RightNodisplay" class="card col">
+                <div id="RightNo" class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <div id="usercontrol" class="usercontrol">
+            <!-- <input class="form-control" type="text"> -->
+            <!-- <button class="btn btn-outline-info btn-circle m-2"></button> -->
+        </div>
+        <footer class="footer row d-flex justify-content-between ms-4 me-4">
+            <button class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#ruleModal">規則</button>
+            <button class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#settingModal">設定</button>
+            <button class="btn btn-primary col-3" id="start">開始</button>
+        </footer>
+    </div>
+    <!-- 規則 -->
+    <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ruleModalLabel">規則</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    一、終極密碼是一種猜數字遊戲，其規則如下：</br>
+
+                    1.遊戲目標：玩家的目標是猜出一個事先隨機選定的秘密數字。</br>
+                    
+                    2.範圍設定：遊戲開始前，確定一個數字範圍，通常是從1到某一個數字（例如1到100）。</br>
+                    
+                    3.秘密數字生成：在遊戲開始時，電腦會生成一個位於指定範圍內的隨機整數作為秘密數字。</br>
+                    
+                    4.玩家猜測：玩家將猜測的數字輸入遊戲中，通常通過文本輸入框或其他互動元素。</br>
+                    
+                    5.提示反饋：當玩家猜測完畢後，遊戲會提供一些提示，告訴玩家他們的猜測是太高了、太低了還是正確的。</br>
+                    
+                    6.重複猜測：玩家可以根據提示繼續猜測，直到他們猜中了秘密數字或決定放棄。</br>
+                    
+                    7.紀錄猜測次數：通常會記錄玩家猜測的次數，以便在遊戲結束時顯示。</br>
+                    
+                    8.遊戲結束：遊戲結束條件通常是當玩家猜中了秘密數字，然後遊戲會顯示猜中的數字以及猜測的總次數。</br>
+
+                    二、終極密碼-按鈕累加：則是使用按鈕去累加。</br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 設定 -->
+    <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingModalLabel">設定</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label class="form-label">遊戲模式：</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="PlayModel" id="MOD1" checked>
+                            <label class="form-check-label" for="MOD1">
+                                終極密碼
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="PlayModel" id="MOD2">
+                            <label class="form-check-label" for="MOD2">
+                                終極密碼-按鈕累加
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="StepDiv" style="display: none;">
+                        <div class="row">
+                            <label class="form-label col-8">設定每次可增加的數量：</label><label id="RNum" class="col-4"
+                                for="RNumBar">1</label>
+                            <input class="text-center col-12" type="range" class="form-range" min="1" max="20" step="1"
+                                id="RNumBar" value="10">
+                            <div></div>
+                            <label class="form-label">設定大小：</label><label id="FNum" for="FNumBar"></label>
+                            <input class="text-center" type="range" class="form-range" min="1" max="20" step="1"
+                                id="FNumBar" value="6">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-6 p-0">
+                            <label class="form-label">最小值</label>
+                            <input class="text-center" type="number" class="form-range" id="MinNum" value="1">
+                        </div>
+                        <div class="col-6 p-0">
+                            <label class="form-label">最大值</label>
+                            <input class="text-center" type="number" class="form-range" id="MaxNum" value="100">
+                        </div>
+                        <div>
+                            <input type="hidden" id="PlayNum" value="1">
+                            <input type="hidden" id="HideNum">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script src="dist/pageLogic.js"></script>
+</html>

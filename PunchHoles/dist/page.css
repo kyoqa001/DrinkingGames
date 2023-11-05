@@ -1,0 +1,44 @@
+        /* 父容器，使用Flex布局 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* 垂直方向排列子元素 */
+            min-height: 90vh;
+            /* 设置最小高度以确保页脚粘在底部 */
+            /* 增加这行来消除子元素之间的空白 */
+            gap: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        /* 主体内容样式 */
+        .body {
+            display: flex;
+            flex-wrap: wrap;
+            /* 允许子元素换行 */
+            justify-content: space-around;
+            /* 在主轴上均匀分布子元素 */
+            align-items: center;
+            /* 在交叉轴上居中对齐子元素 */
+            flex-grow: 1;
+            /* 让主体内容占据可用的所有剩余空间 */
+        }
+
+        /* 页脚样式 */
+        .footer {}
+
+        .btn-circle {
+            width: 12vh;
+            height: 12vh;
+            border-radius: 50%;
+            text-align: center;
+            margin: 10px;
+        }
+
+        /* 关闭按钮的悬停效果 */
+        .btn-circle:hover {
+            /* 重置悬停样式为初始状态，或者您可以将它们设置为您想要的样式 */
+            background-color: inherit;
+            /* 将背景颜色重置为默认值 */
+            /* 添加其他样式以覆盖悬停效果 */
+        }

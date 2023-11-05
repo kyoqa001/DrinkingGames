@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    /* 设置容器的高度，这里使用视口高度作为示例 */
+}
+
+.row {
+    flex: 1;
+    /* 将每行的高度设置为相等的比例 */
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    /* 将每列的高度设置为相等的比例 */
+}
+
+
+.Numbtn {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    /* 其他样式属性 */
+}
+
+.Numbtn:hover {}
+
+.Numbtn:active,
+.Numbtn:focus {}
+
+.Numbtn h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.textbtn {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.textbtn h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.NOInput {
+    margin-top: 30%;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    text-align: center;
+}
+
+.NOInput:hover {
+    /* 悬停状态下的样式 */
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.clicked {
+    /* 修改点击后的样式为红色背景 */
+    background-color: red;
+}
+
+.txt {
+    color: lightsalmon;
+}
