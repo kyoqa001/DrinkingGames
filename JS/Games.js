@@ -9,7 +9,7 @@ const Games = {
     無限九宮格: "InfiniteNine/index",
     九宮格拼圖: "Sliding/index",
     俄羅斯輪盤: "RussianRoulette/index",
-    拉霸遊戲: "SlotGame/index",
+    拉霸遊戲: "SlotGame2/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");
