@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>翻牌記憶遊戲</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+  <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="../JS/Layout.js"></script>
+  <link rel="stylesheet" type="text/css" href="dist/page.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="timer">00:00:00</div>
+    <div class="board row" id="board"></div>
+  </div>
+  <footer class="footer">
+    <div class="row text-center" style="width: 100%;">
+      <div class="col">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ruleModal">
+          <h1>規則</h1>
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#settingModal">
+          <h1>設定</h1>
+        </button>
+      </div>
+      <div class="col">
+        <button id="SB" class="btn btn-primary">
+          <h1>開始</h1>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 規則 -->
+  <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ruleModalLabel">遊戲規則</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>翻牌記憶：：5秒記憶，將兩兩對應翻開。</li>
+            <li>花色對應：抽一張牌，若花色對應時則輸，花色及數字同時對應時Double，並且選擇1~10數字</li>
+            <li>成雙成對：牌組當中隨機產生一組對應的牌，若抽到相同的牌雙方則輸</li>
+            <li>1234和拾：抽一張牌，並且每一行翻開一張牌，若畫面上的數字總和大於撲克牌則輸</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 設定 -->
+  <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab1-tab" data-bs-toggle="pill" data-bs-target="#tab1" type="button"
+                role="tab" aria-controls="tab1" aria-selected="true">遊戲設定</button>
+            </li>
+          </ul>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div>
+                <label class="form-label">遊戲模式：</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="PlayModel" id="Game1" checked>
+                  <label class="form-check-label" for="Game1">
+                    翻牌記憶
+                  </label>
+                </div>
+                <div class="ms-4" id="Game1Settings">
+                  <div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="Graph" id="Graph1" checked>
+                      <label class="form-check-label" for="Graph1">撲克牌</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="Graph" id="Graph2">
+                      <label class="form-check-label" for="Graph2">英文字母</label>
+                    </div>
+                  </div>
+                  <div>
+                    <Label for="TimerDownSec">倒數計時：</Label>
+                    <input id="TimerDownSec" type="number" style="text-align: center;" value="5">
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="PlayModel" id="Game2">
+                  <label class="form-check-label" for="Game2">
+                    花色對應
+                  </label>
+                </div>
+
+                <div class="ms-4" id="Game2Settings" style="display: none;">
+                  <table>
+                    <tr>
+                      <td><label for="IsDuplicated">是否翻回：</label></td>
+                      <td class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="IsTurnBack">
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="PlayModel" id="Game3">
+                  <label class="form-check-label" for="Game3">
+                    成雙成對
+                  </label>
+                </div>
+
+                <div class="ms-4" id="Game3Settings" style="display: none;">
+                  <div>
+                    <Label for="MateNum">配對數量：</Label>
+                    <input id="MateNum" type="number" style="text-align: center;" value="1">
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="PlayModel" id="Game4">
+                  <label class="form-check-label" for="Game4">
+                    1234和拾
+                  </label>
+                </div>
+
+                <div class="ms-4" id="Game4Settings" style="display: none;">
+                </div>
+                <div class="ms-4" id="AllSettings">
+                  <div>
+                    <Label for="LenNum">撲克牌總數量：</Label>
+                    <input id="LenNum" type="number" style="text-align: center;" value="5">
+                  </div>
+                  <div>
+                    <Label for="MinNum">最小數字：</Label>
+                    <input id="MinNum" type="number" style="text-align: center;" value="1">
+                  </div>
+                  <div>
+                    <Label for="MaxNum">最大數字：</Label>
+                    <input id="MaxNum" type="number" style="text-align: center;" value="10">
+                  </div>
+                  <dvi>
+                    <Label for="CHeight">長：</Label>
+                    <input id="CHeight" type="number" style="text-align: center;" value="21">
+                  </dvi>
+                  <div>
+                    <Label for="CWidth">寬：</Label>
+                    <input id="CWidth" type="number" style="text-align: center;" value="13">
+                  </div>
+                  <div>
+                    <Label for="MaxNum">翻回時間(毫秒)：</Label>
+                    <input id="TurnBackNum" type="number" style="text-align: center;" value="800">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="dist/pageLogic.js"></script>
+</html>

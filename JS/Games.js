@@ -10,6 +10,7 @@ const Games = {
     九宮格拼圖: "Sliding/index",
     俄羅斯輪盤: "RussianRoulette/index",
     拉霸遊戲: "SlotGame2/index",
+    翻牌記憶: "FlopMemory/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");
