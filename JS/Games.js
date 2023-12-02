@@ -11,6 +11,7 @@ const Games = {
     俄羅斯輪盤: "RussianRoulette/index",
     拉霸遊戲: "SlotGame2/index",
     翻牌記憶: "FlopMemory/index",
+    玻璃橋: "GlassBridge/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");

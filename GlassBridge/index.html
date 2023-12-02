@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>玻璃橋</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+    <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script src="../JS/Layout.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="src/page.css"> -->
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="HText" class="h1 text-center">終點：20</div>
+        <div class="body">
+            <table id="GameTable">
+                <tr>
+                    <td class="h1 pe-3">1</td>
+                    <td class="Glass bg-secondary bg-gradient bg-opacity-80 border border-2 border-black"></td>
+                    <td class="Glass bg-secondary bg-gradient bg-opacity-80 border border-2 border-black"></td>
+                    <td class="Glass bg-secondary bg-gradient bg-opacity-80 border border-2 border-black"></td>
+                    <td class="Glass bg-secondary bg-gradient bg-opacity-80 border border-2 border-black"></td>
+                    <td class="Glass bg-secondary bg-gradient bg-opacity-80 border border-2 border-black"></td>
+                </tr>
+            </table>
+        </div>
+        <footer class="footer row d-flex justify-content-between ms-4 me-4">
+            <button class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#ruleModal">規則</button>
+            <button class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#settingModal">設定</button>
+            <button class="btn btn-primary col-3" id="StartGamebtn">開始</button>
+        </footer>
+    </div>
+    <!-- 規則 -->
+    <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ruleModalLabel">規則</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>玻璃橋(左右數量為2)：抽一張牌，數字為向上前進的數量，若淘汰則輪到下一位，最後抵達終點者為輸。</li>
+                        <li>玻璃橋(左右數量為4)：抽一張牌，按照花色順序向上前進，數字為向上前進的數量，若選擇到失敗(紅色)圈圈則輸。</li>
+                        <li>玻璃橋(左右數量為5)：抽一張牌，可自由選擇左右其中一個，數字為向上前進的數量，若選擇到失敗(紅色)圈圈則輸。</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 設定 -->
+    <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingModalLabel">設定</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="settings">
+                        <div class="h5 text-center">畫面設定</div>
+                        <div>
+                            <label class="form-label">設定大小：</label>
+                            <input class="text-center" type="number" class="form-range"  id="RNumBar" value="20">
+                        </div>
+                        <hr>
+                        <div class="h5 text-center">遊戲設定</div>
+                        <table>
+                            <tr>
+                                <td><label for="IsHRandom">隨機上下數量：</label></td>
+                                <td class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="IsHRandom">
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="NHRSetting">
+                            <div>
+                                <Label for="HNum">設定上下數量：</Label>
+                                <input id="HNum" type="number" style="text-align: center;" value="20">
+                            </div>
+                        </div>
+                        <div id="HRSetting">
+                            <div>
+                                <Label for="HMaxNum">上下最高數量：</Label>
+                                <input id="HMaxNum" type="number" style="text-align: center;" value="30">
+                            </div>
+
+                            <div>
+                                <Label for="HMinNum">上下最低數量：</Label>
+                                <input id="HMinNum" type="number" style="text-align: center;" value="10">
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <Label for="ShowNum">顯示上下數量：</Label>
+                            <input id="ShowNum" type="number" style="text-align: center;" value="5">
+                        </div>
+                        <div>
+                            <Label for="WNum">設定左右數量：</Label>
+                            <input id="WNum" type="number" style="text-align: center;" value="5">
+                        </div>
+                        <div>
+                            <Label for="FailNum">設定淘汰數量：</Label>
+                            <input id="FailNum" type="number" style="text-align: center;" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="dist/pageLogic.js"></script>
+
+</html>
