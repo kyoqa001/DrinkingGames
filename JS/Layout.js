@@ -14,4 +14,5 @@ $(function () {
     // 插入layout
     document.body.prepend(navigation);
     // document.body.appendChild(footer);
+    document.getElementsByTagName('meta').viewport.content+=',user-scalable';
 })
