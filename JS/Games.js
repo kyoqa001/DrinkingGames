@@ -13,6 +13,7 @@ const Games = {
     翻牌記憶: "FlopMemory/index",
     玻璃橋: "GlassBridge/index",    
     數字猜謎: "1A2B/index",
+    四聖水: "StackCup/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");

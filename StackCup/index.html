@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+    <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script src="../JS/Layout.js"></script>
+</head>
+<body>
+<div class="container"></div>
+<footer></footer>
+<div class="modal" id="selectStackModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">增加</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="suitsIndex" hidden="hidden"></div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-primary plus-num">1</button>
+                <button type="button" class="btn btn-primary plus-num">2</button>
+                <button type="button" class="btn btn-primary plus-num">3</button>
+                <button type="button" class="btn btn-primary plus-num">4</button>
+                <button type="button" class="btn btn-primary plus-num">5</button>
+                <button type="button" class="btn btn-primary plus-num">6</button>
+                <button type="button" class="btn btn-primary plus-num">7</button>
+                <button type="button" class="btn btn-primary plus-num">8</button>
+                <button type="button" class="btn btn-primary plus-num">9</button>
+                <button type="button" class="btn btn-primary plus-num">10</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="settingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">增加</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--      調整最低與最高級距      -->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="settingMaxMix" id="settingGroupMax" checked>
+                    <label class="form-check-label" for="settingGroupMax">
+                        全體最大值
+                    </label>
+                    <div style="display: flex; flex-direction: row; align-items: baseline;">
+                        設定值：
+                        <input class="form-control" id="settingGroupInput" type="number" placeholder=""
+                               aria-label="" value="20">
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="settingMaxMix" id="settingRandomMax">
+                    <label class="form-check-label" for="settingRandomMax">
+                        全體隨機
+                    </label>
+                    <div style="display: flex; flex-direction: row; align-items: baseline;">
+                        最小值：
+                        <div>
+                            <input class="form-control" id="settingRandomMinInput" type="number" placeholder=""
+                                   aria-label="" value="20">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: baseline;">
+                        最大值：
+                        <div>
+                            <input class="form-control" id="settingRandomMaxInput" type="number" placeholder=""
+                                   aria-label="" value="30">
+                        </div>
+                    </div>
+                </div>
+                <div id="settingMsg">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                <button type="button" class="btn btn-primary" id="settingSave">保存</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="ruleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">規則說明</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--規則寫在這裡-->
+                抽一張牌按照花色去加上數字，若到達上限即輸。
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script src="./dist/pageLogic.js"> </script>
+</body>
+</html>
