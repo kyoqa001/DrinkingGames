@@ -16,6 +16,7 @@ const Games = {
     四聖水: "StackCup/index",
     八方陣: "OctagonalFormation/index",
     力拔山河: "TugOfWar/index",
+    九樓電梯: "NineElevators/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");
