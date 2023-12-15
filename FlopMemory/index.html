@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <script src="../JS/Layout.js"></script>
-  <link rel="stylesheet" type="text/css" href="dist/page.css">
+  <!-- <link rel="stylesheet" type="text/css" href="src/page.css"> -->
 </head>
 
 <body>
@@ -120,7 +120,7 @@
                 <div class="ms-4" id="Game2Settings" style="display: none;">
                   <table>
                     <tr>
-                      <td><label for="IsDuplicated">是否翻回：</label></td>
+                      <td><label for="IsTurnBack">自動翻回：</label></td>
                       <td class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="IsTurnBack">
                       </td>
@@ -147,9 +147,34 @@
                     1234和拾
                   </label>
                 </div>
-
                 <div class="ms-4" id="Game4Settings" style="display: none;">
                 </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="PlayModel" id="Game5">
+                  <label class="form-check-label" for="Game5">
+                    數字記憶
+                  </label>
+                </div>
+                <div class="ms-4" id="Game5Settings" style="display: none;">
+                  <div>
+                    <Label for="GroupNum">撲克牌(1~10)組數：</Label>
+                    <input id="GroupNum" type="number" style="text-align: center; width: 20%" value="2">組
+                  </div>
+                  <div>
+                    <Label for="TimerDownSec2">倒數計時：</Label>
+                    <input id="TimerDownSec2" type="number" style="text-align: center;" value="5">
+                  </div>
+                  <table>
+                    <tr>
+                      <td><label for="IsTurnBack2">自動翻回：</label></td>
+                      <td class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="IsTurnBack2">
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
                 <div class="ms-4" id="AllSettings">
                   <div>
                     <Label for="LenNum">撲克牌總數量：</Label>
@@ -189,5 +214,7 @@
   </div>
 </body>
 
+<!-- <script src="src/pageLogic.js"></script> -->
 <script src="dist/pageLogic.js"></script>
+
 </html>
