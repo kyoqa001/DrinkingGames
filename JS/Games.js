@@ -19,6 +19,7 @@ const Games = {
     九樓電梯: "NineElevators/index",    
     四子棋: "Gobang/index",    
     鴨馬壓碼: "PlaceBet/index",
+    記憶Tempo: "MemoryTempo/index",
 };
 const keys = Object.getOwnPropertyNames(Games);
 const GameList = document.getElementById("GameList");
