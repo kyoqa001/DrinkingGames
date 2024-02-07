@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <script src="../JS/Layout.js"></script>
-    <link rel="stylesheet" type="text/css" href="dist/page.css">
+    <!-- <link rel="stylesheet" type="text/css" href="src/page.css"> -->
 </head>
 
 <body>
@@ -76,7 +76,8 @@
                 </div>
                 <div class="modal-body">
                     <ul>
-                        <li>遊戲一：</li>
+                        <li>紅黑單雙：依照顏色及單雙數去除手牌</li>
+                        <li>撲克牌：每人發一張，旋轉一次輪盤，以此類推，直到抽中為止。</li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -118,6 +119,12 @@
                                         <input class="form-check-input" type="checkbox" id="TOpen" checked>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><label for="IsRemove">抽中移除：</label></td>
+                                    <td class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="IsRemove">
+                                    </td>
+                                </tr>
                             </table>
                             <div>
                                 <label class="form-label">迴轉圈數：</label><label id="CNum" for="CNumBar"></label>
@@ -125,7 +132,8 @@
                             </div>
                             <div>
                                 <label class="form-label">隨機數值：</label><label id="RNum" for="RNumBar"></label>
-                                <input type="range" class="form-range" min="2" max="52" step="1" id="RNumBar" value="8">
+                                <input type="range" class="form-range" min="2" max="100" step="1" id="RNumBar"
+                                    value="8">
                             </div>
                             <table id="SettingTable" class="table text-center">
                                 <tr>
@@ -153,7 +161,7 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><button class="btn btn-outline-success" id="Game1btn">紅黑數字</button></td>
+                                    <td><button class="btn btn-outline-success" id="Game1btn">紅黑單雙</button></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -186,5 +194,7 @@
         </div>
     </div>
 </body>
+<!-- <script src="src/pageLogic.js"></script> -->
 <script src="dist/pageLogic.js"></script>
+
 </html>

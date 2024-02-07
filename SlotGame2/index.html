@@ -23,7 +23,7 @@
 
 <body>
   <div class="container">
-      <canvas id="MyCanvas"></canvas>
+    <canvas id="MyCanvas"></canvas>
   </div>
   <footer class="footer">
     <div class="row" style="width: 100%;">
@@ -55,7 +55,7 @@
         </div>
         <div class="modal-body">
           <ul>
-            <li>遊戲一：</li>
+            <li>叫小姐：根據每張牌對應相對的動作</li>
           </ul>
         </div>
         <div class="modal-footer">
@@ -90,6 +90,18 @@
 
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <table>
+                <tr>
+                  <td><label for="IsRemove">抽中移除：</label></td>
+                  <td class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="IsRemove">
+                  </td>
+                </tr>
+              </table>
+              <div>
+                <label class="form-label">秒數：</label>
+                <input class="text-center" type="number" class="form-range" id="SNum" value="3">
+              </div>
               <div>
                 <label class="form-label">內容數量：</label><label id="NNum" for="NNumBar"></label>
                 <input type="range" class="form-range" min="1" max="100" step="1" id="NNumBar" value="10">
@@ -101,7 +113,7 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><input type="text" id="N1" value="內容1"></td>
+                  <td><input type="text" id="C1" value="內容1"></td>
                 </tr>
               </table>
               <div class="row">
@@ -118,11 +130,7 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><button class="btn btn-outline-success" id="Game1btn">遊戲一</button></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td><button class="btn btn-outline-success" id="Game2btn">遊戲二</button></td>
+                  <td><button class="btn btn-outline-success" id="Game1btn">叫小姐</button></td>
                 </tr>
               </table>
             </div>
@@ -146,6 +154,7 @@
     </div>
   </div>
 </body>
+<!-- <script src="src/pageLogic.js"></script> -->
 <script src="dist/pageLogic.js"></script>
 
 </html>
