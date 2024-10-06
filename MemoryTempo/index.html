@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>記憶Tempo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+  <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="../JS/Layout.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="src/page.css"> -->
+</head>
+
+<body>
+
+  <div class="mt-4 container">
+    <div class="body rounded-3 p-2">
+      <div id="AnswerLabel" class="text-center h1 bg-light text-dark" style="width: 100%;"></div>
+      <table id="GameTable" class="text-center text-dark">
+        <tr>
+          <td><i class="bi bi-suit-spade-fill"></i></td>
+          <td><i class="text-danger bi bi-suit-heart-fill"></i></td>
+          <td><i class="text-danger bi bi-suit-diamond-fill"></i></td>
+          <td><i class="bi bi-suit-club-fill"></i></td>
+        </tr>
+        <tr>
+          <td><button class="Numbtn btn btn-light rounded-circle">1</button></td>
+          <td><button class="Numbtn btn btn-light rounded-circle text-danger">1</button></td>
+          <td><button class="Numbtn btn btn-light rounded-circle text-danger">1</button></td>
+          <td><button class="Numbtn btn btn-light rounded-circle">1</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <footer class="footer">
+      <button id="NextBtn" class="form-control btn btn-primary m-1">下一位</button>
+      <div class="row justify-content-evenly m-2" style="width: 100%;">
+        <button class="btn btn-primary col-3 m-1" data-bs-toggle="modal" data-bs-target="#ruleModal">規則</button>
+        <button type="button" class="btn btn-primary col-3 m-1" data-bs-toggle="modal"
+          data-bs-target="#settingModal">設定</button>
+        <button id="SB" class="btn btn-primary col-3 m-1">開始</button>
+      </div>
+    </footer>
+  </div>
+  <div id="Mines" hidden></div>
+
+  <!-- 規則 -->
+  <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ruleModalLabel">遊戲規則</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          記憶Tempo：
+          <ul>
+            <li>按照累積前一個人按的數字，依順序按完後再加1個新的數字。</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="settingModalLabel">遊戲設定</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<!-- <script src="src/pageLogic.js"></script> -->
+<script src="dist/pageLogic.js"></script>
+
+</html>

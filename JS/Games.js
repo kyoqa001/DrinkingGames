@@ -17,7 +17,9 @@ const Games = {
     八方陣: "OctagonalFormation/index",
     力拔山河: "TugOfWar/index",
     九樓電梯: "NineElevators/index",    
+    記憶Tempo: "MemoryTempo/index",
     四子棋: "Gobang/index",    
+    雙陸棋: "Backgammon/index",
     鴨馬壓碼: "PlaceBet/index",
 };
 const keys = Object.getOwnPropertyNames(Games);

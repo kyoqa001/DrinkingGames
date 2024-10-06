@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>雙陸棋</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/_bootswatch.scss">
+  <link rel="stylesheet" type="text/css" href="../css/_variables.scss">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="../JS/Layout.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="src/page.css"> -->
+</head>
+
+<body>
+
+  <div class="mt-4 container">
+    <div class="body rounded-3">
+      <table id="GameTable" class="text-center text-dark"> </table>
+    </div>
+
+    <footer class="footer">
+      <div class="row justify-content-evenly m-2" style="width: 100%;">
+        <button class="btn btn-primary col-3 m-1" data-bs-toggle="modal" data-bs-target="#ruleModal">規則</button>
+        <button type="button" class="btn btn-primary col-3 m-1" data-bs-toggle="modal"
+          data-bs-target="#settingModal">設定</button>
+        <button id="SB" class="btn btn-primary col-3 m-1">開始</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 規則 -->
+  <div class="modal fade" id="ruleModal" tabindex="-1" aria-labelledby="ruleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ruleModalLabel">遊戲規則</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          雙陸棋：
+          <div>
+            分成紅黑兩隊，每回合有5滴血，起始點為3顆棋，抽到自己顏色的為前進步數，若起始點有棋則以起始點的棋先動，若起始點無棋時則以起始點最近的棋移動；若移動的位置與自己重複則該點數往前移動的步數；若遇到對方的棋則對方退回起始點。
+            J,Q,K則為爆擊，直接扣對方一滴血。若棋子攻擊對方後，則退回起始點。若一方無血則輸。
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="settingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="settingModalLabel">遊戲設定</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label class="form-label">起始棋數量：</label>
+            <input class="text-center" type="number" class="form-range" id="StartNum" value="3">
+          </div>
+          <div>
+            <label class="form-label">生命值上限：</label>
+            <input class="text-center" type="number" class="form-range" id="HeartNum" value="3">
+          </div>
+          <div>
+            <label class="form-label">按鈕大小：</label>
+            <input class="text-center" type="number" class="form-range" id="BtnSizeNum" value="7">
+          </div>
+          <div>
+            <label class="form-label">字體大小：</label>
+            <input class="text-center" type="number" class="form-range" id="FontSizeNum" value="3">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<!-- <script src="src/pageLogic.js"></script> -->
+<script src="dist/pageLogic.js"></script>
+
+</html>
